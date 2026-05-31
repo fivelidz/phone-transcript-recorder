@@ -50,11 +50,18 @@
             android:exported="false"
             android:foregroundServiceType="dataSync|microphone" />
 
-        <!-- Live microphone recorder (in-person meetings + acoustic call capture). -->
+        <!-- Live microphone recorder (in-person meetings + acoustic call capture).
+             exported=true with an intent-filter so qalarc-notes can start it directly
+             via NotesBridge.launchTranscriber() from the 💬 Transcript view. -->
         <service
             android:name=".RecorderService"
-            android:exported="false"
-            android:foregroundServiceType="microphone" />
+            android:exported="true"
+            android:foregroundServiceType="microphone">
+            <intent-filter>
+                <action android:name="com.fivelidz.transcriber.REC_START" />
+                <action android:name="com.fivelidz.transcriber.REC_STOP" />
+            </intent-filter>
+        </service>
 
         <!-- Restart the watcher on boot if auto-watch is enabled. -->
         <receiver
