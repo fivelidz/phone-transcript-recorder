@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Transcriber" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#3949AB</item>
+        <item name="colorPrimaryVariant">#283593</item>
+    </style>
+</resources>

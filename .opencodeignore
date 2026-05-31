@@ -1,0 +1,15 @@
+# Keep qalcode/opencode snapshots small — exclude large build artifacts and vendored source.
+android/app/build/
+android/whisperlib/build/
+android/.gradle/
+android/build/
+android/**/.cxx/
+android/local.properties
+# Vendored whisper.cpp source (~15 MB, rarely edited; full copy lives in MASTER_PROJECTS)
+android/whisper-cpp-src/
+# Model binaries should never be committed/snapshotted
+*.bin
+# Vendored sherpa-onnx prebuilt native libs + ONNX diarization models (large, downloadable)
+android/app/src/main/jniLibs/
+*.onnx
+*.so

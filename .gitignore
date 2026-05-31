@@ -1,0 +1,45 @@
+# ── Android build artefacts ──────────────────────────────────────────────────
+android/app/build/
+android/whisperlib/build/
+android/build/
+android/.gradle/
+android/**/.cxx/
+android/local.properties
+*.apk
+*.aab
+
+# ── Large vendored/downloaded binaries (not committed — see README for how to get them) ──
+# whisper.cpp source (vendored from MASTER_PROJECTS; get with scripts/install.sh)
+android/whisper-cpp-src/
+
+# Whisper speech model (~142 MB — pushed to phone separately)
+*.bin
+
+# sherpa-onnx prebuilt native libs (~30 MB per ABI)
+android/app/src/main/jniLibs/
+
+# Diarization ONNX models bundled in assets (~41 MB)
+android/app/src/main/assets/diarization/
+
+# ── opencode / qalcode internal session data ─────────────────────────────────
+.opencode/
+
+# ── OS / IDE noise ───────────────────────────────────────────────────────────
+.DS_Store
+.idea/
+*.iml
+.vscode/
+__pycache__/
+*.pyc
+
+# ── Gradle caches ────────────────────────────────────────────────────────────
+.gradle/
+gradle/wrapper/gradle-wrapper.jar
+
+# ── Runtime output (transcripts on the phone, not committed) ─────────────────
+*.wav
+*.m4a
+*.mp3
+
+# ── qalarc-notes archive (auto-generated backups, no need in git) ────────────
+meeting_transcriber/__pycache__/
